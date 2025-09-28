@@ -3,20 +3,17 @@
 {
   # 1. Use the dedicated NixOS option for uinput.
   #    This automatically loads the kernel module, creates the 'uinput' group,
-  #    and sets the correct device permissions. It replaces our manual udev rule.
+  #    and sets the correct device permissions.
   hardware.uinput.enable = true;
 
   # 2. Enable and configure the kanata service.
+  #    The service will create its own 'kanata' user automatically.
   services.kanata = {
     enable = true;
-    # The kanata service automatically creates its own user. We just need to
-    # ensure that user is added to the 'uinput' group managed by the option above.
-    user = "kanata";
-    group = "kanata";
-
     keyboards = {
       default = {
         # IMPORTANT: Make sure this path is correct for your laptop!
+        # You can find it with `ls /dev/input/by-path/`
         devices = [ "/dev/input/by-path/platform-i8042-serio-0-event-kbd" ];
 
         config = ''
@@ -34,5 +31,6 @@
   };
 
   # 3. Add the service's user ('kanata') to the 'uinput' group.
+  #    This is the crucial step that grants the service the permissions it needs.
   users.groups.uinput.members = [ "kanata" ];
 }
