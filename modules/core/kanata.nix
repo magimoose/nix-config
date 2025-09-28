@@ -1,39 +1,38 @@
 { config, pkgs, ... }:
 
 {
-  # 1. Enable the kernel module required for kanata
-  boot.kernelModules = [ "uinput" ];
+  # 1. Use the dedicated NixOS option for uinput.
+  #    This automatically loads the kernel module, creates the 'uinput' group,
+  #    and sets the correct device permissions. It replaces our manual udev rule.
+  hardware.uinput.enable = true;
 
-  # 2. Enable the kanata service
+  # 2. Enable and configure the kanata service.
   services.kanata = {
     enable = true;
+    # The kanata service automatically creates its own user. We just need to
+    # ensure that user is added to the 'uinput' group managed by the option above.
+    user = "kanata";
+    group = "kanata";
 
-    # 3. Define a keyboard configuration
     keyboards = {
-      # You can name this anything, e.g., "default", "laptop", "mykeyboard"
       default = {
-        # 4. Specify the device to apply the remapping to.
-        #    Using "*" applies it to all keyboards. For more specific targeting,
-        #    you can find your keyboard's event path.
-        devices = [ "/dev/input/by-path/platform-i8042-serio-0-event-kbd" ]; # Example for a laptop keyboard
+        # IMPORTANT: Make sure this path is correct for your laptop!
+        devices = [ "/dev/input/by-path/platform-i8042-serio-0-event-kbd" ];
 
-        # 5. Define the key mapping configuration using kanata's syntax
         config = ''
           (defsrc
             caps
           )
 
           (deflayer default
-            (tap-hold 200 200 caps lsft)
+            ;; On tap, send escape. On hold, act as left shift.
+            (tap-hold 200 200 esc lsft)
           )
         '';
       };
     };
   };
 
-  # 6. Ensure the necessary user groups exist and have the right permissions
-  users.groups.uinput.members = [ "root" "kanata" ];
-  services.udev.extraRules = ''
-    KERNEL=="uinput", MODE="0660", GROUP="uinput"
-  '';
+  # 3. Add the service's user ('kanata') to the 'uinput' group.
+  users.groups.uinput.members = [ "kanata" ];
 }
