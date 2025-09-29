@@ -31,7 +31,7 @@ in
 
       input = {
         kb_layout = "us(dvp),fi";
-        kb_options = "grp:alt_caps_toggle";
+        kb_options = "grp:ctrl_space_toggle";
         numlock_by_default = true;
         repeat_delay = 300;
         follow_mouse = 0;
