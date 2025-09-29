@@ -21,5 +21,9 @@
     ## Python
     python3
     python312Packages.ipython
+
+    ## Extra
+    nodejs
+    claude-code
   ];
 }
