@@ -8,7 +8,6 @@
       tt = "gtrash put";
       cat = "bat";
       nano = "micro";
-      code = "vscode";
       diff = "delta --diff-so-fancy --side-by-side";
       less = "bat";
       copy = "wl-copy";
