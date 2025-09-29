@@ -26,6 +26,9 @@ in
       ## Color scheme
       jdinhlife.gruvbox
       jonathanharty.gruvbox-material-icon-theme
+
+      ## Other
+      github.copilot
     ];
   };
 }
