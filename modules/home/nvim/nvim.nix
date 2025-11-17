@@ -2,6 +2,7 @@
 {
   imports = [
     ./telescope.nix
+    ./nvim-cmp.nix
   ];
 
   programs.neovim = {

@@ -5,7 +5,7 @@
     plugins = with pkgs; [
       fd
       vimPlugins.telescope-nvim
-      vimPlugins.telescope-ui-select-nvim
+      vimPlugi--ns.telescope-ui-select-nvim
 
     ];
     extraLuaConfig = # lua
