@@ -28,12 +28,12 @@
       "workbench.editor.limit.enabled" = true;
       "workbench.editor.limit.value" = 10;
       "workbench.editor.limit.perEditorGroup" = true;
-      "workbench.editor.showTabs" = "none";
+      #"workbench.editor.showTabs" = "none";
       "files.autoSave" = "onWindowChange";
       "explorer.openEditors.visible" = 0;
       "breadcrumbs.enabled" = false;
       "editor.renderControlCharacters" = false;
-      "workbench.activityBar.location" = "hidden";
+      #"workbench.activityBar.location" = "hidden";
       "workbench.statusBar.visible" = false;
       "editor.scrollbar.verticalScrollbarSize" = 2;
       "editor.scrollbar.horizontalScrollbarSize" = 2;
@@ -59,9 +59,10 @@
       "zig.zls.enableArgumentPlaceholders" = false;
       "zig.zls.enableBuildOnSave" = true;
       "zig.zls.buildOnSaveArgs" = [ ];
-
+	
       "nix.serverPath" = "nixd";
       "nix.enableLanguageServer" = true;
+      "keyboard.dispatch" = "keyCode";
       # "nix.serverSettings" = {
       #   "nixd" = {
       #     "formatting" = {

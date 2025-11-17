@@ -2,7 +2,7 @@
 {
   services = {
     gvfs.enable = true;
-
+    blueman.enable = true; # for the Blueman applet (optional)
     gnome = {
       tinysparql.enable = true;
       gnome-keyring.enable = true;
@@ -22,4 +22,5 @@
       HandlePowerKey = "ignore";
     };
   };
+  virtualisation.docker.enable = true;
 }

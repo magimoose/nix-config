@@ -33,6 +33,11 @@
     fsType = "vfat";
   };
 
+  fileSystems."/home/magnusjg/hdd" = {
+    device = "/dev/disk/by-uuid/f2ec8a73-9d4f-4a10-8b95-8acbf991e51c";
+    fsType = "ext4";
+  };
+
   swapDevices = [
     { device = "/dev/disk/by-uuid/2d69abc2-3d44-481b-ada8-b436c2b9c8c2"; }
   ];

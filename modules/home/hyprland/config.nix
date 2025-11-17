@@ -30,7 +30,7 @@ in
       ];
 
       input = {
-        kb_layout = "us(dvp),fi";
+        kb_layout = "us(dvp),fi,us(colemak_dh)";
         kb_options = "grp:ctrl_space_toggle";
         numlock_by_default = true;
         repeat_delay = 300;
@@ -174,7 +174,7 @@ in
         "$mainMod SHIFT, W,exec, hyprctl dispatch exec '[float; size 925 615] waypaper'"
         "$mainMod, N, exec, swaync-client -t -sw"
         "CTRL SHIFT, Escape, exec, hyprctl dispatch exec '[workspace 9] missioncenter'"
-        "$mainMod, equal, exec, woomer"
+        # "$mainMod, equal, exec, woomer"
         # "$mainMod SHIFT, W, exec, vm-start"
 
         # screenshot
@@ -205,28 +205,28 @@ in
         "CTRL ALT, down, exec, hyprctl dispatch focuswindow tiled"
 
         # switch workspace
-        "$mainMod, &, workspace, 1"
-        "$mainMod, [, workspace, 2"
-        "$mainMod, {, workspace, 3"
-        "$mainMod, }, workspace, 4"
-        "$mainMod, (, workspace, 5"
-        "$mainMod, =, workspace, 6"
-        "$mainMod, *, workspace, 7"
-        "$mainMod, ), workspace, 8"
-        "$mainMod, +, workspace, 9"
-        "$mainMod, ], workspace, 10"
+        "$mainMod, ampersand, workspace, 1"
+        "$mainMod, bracketleft, workspace, 2"
+        "$mainMod, braceleft, workspace, 3"
+        "$mainMod, braceright, workspace, 4"
+        "$mainMod, parenleft, workspace, 5"
+        "$mainMod, equal, workspace, 6"
+        "$mainMod, asterisk, workspace, 7"
+        "$mainMod, parenright, workspace, 8"
+        "$mainMod, plus, workspace, 9"
+        "$mainMod, bracketright, workspace, 10"
 
         # same as above, but switch to the workspace
-        "$mainMod SHIFT, &, movetoworkspacesilent, 1" # movetoworkspacesilent
-        "$mainMod SHIFT, [, movetoworkspacesilent, 2"
-        "$mainMod SHIFT, {, movetoworkspacesilent, 3"
-        "$mainMod SHIFT, }, movetoworkspacesilent, 4"
-        "$mainMod SHIFT, (, movetoworkspacesilent, 5"
-        "$mainMod SHIFT, =, movetoworkspacesilent, 6"
-        "$mainMod SHIFT, *, movetoworkspacesilent, 7"
-        "$mainMod SHIFT, ), movetoworkspacesilent, 8"
-        "$mainMod SHIFT, +, movetoworkspacesilent, 9"
-        "$mainMod SHIFT, ], movetoworkspacesilent, 10"
+        "$mainMod SHIFT, ampersand, movetoworkspacesilent, 1" # movetoworkspacesilent
+        "$mainMod SHIFT, bracketleft, movetoworkspacesilent, 2"
+        "$mainMod SHIFT, braceleft, movetoworkspacesilent, 3"
+        "$mainMod SHIFT, braceright, movetoworkspacesilent, 4"
+        "$mainMod SHIFT, parenleft, movetoworkspacesilent, 5"
+        "$mainMod SHIFT, equal, movetoworkspacesilent, 6"
+        "$mainMod SHIFT, asterisk, movetoworkspacesilent, 7"
+        "$mainMod SHIFT, parenright, movetoworkspacesilent, 8"
+        "$mainMod SHIFT, plus, movetoworkspacesilent, 9"
+        "$mainMod SHIFT, bracketright, movetoworkspacesilent, 10"
         "$mainMod CTRL, c, movetoworkspace, empty"
 
         # window control
@@ -387,7 +387,10 @@ in
         "f[1], gapsout:0, gapsin:0"
       ];
 
-      monitor = [ "=,preferred,auto,auto" ];
+      monitor = [
+        "eDP-1,1920x1080@60.0,auto,1"
+        ",preferred,auto-center-up,1"
+      ];
 
       xwayland = {
         force_zero_scaling = true;

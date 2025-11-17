@@ -10,20 +10,21 @@
     nixfmt-rfc-style
 
     ## C / C++
-    gcc
-    gdb
-    gef
-    cmake
-    gnumake
-    valgrind
-    llvmPackages_20.clang-tools
+    # gcc
+    # gdb
+    # gef
+    # cmake
+    # gnumake
+    # valgrind
+    # llvmPackages_20.clang-tools
 
     ## Python
-    python3
-    python312Packages.ipython
+    # python3
+    # python312Packages.ipython
 
     ## Extra
     nodejs
     claude-code
+    # uv
   ];
 }
