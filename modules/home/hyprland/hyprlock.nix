@@ -13,8 +13,6 @@
     settings = {
       general = {
         hide_cursor = true;
-        no_fade_in = false;
-        disable_loading_bar = true;
         ignore_empty_input = true;
         fractional_scaling = 0;
       };
@@ -94,9 +92,7 @@
           dots_center = true;
           outer_color = "rgba(102, 92, 84, 0.33)";
           inner_color = "rgba(102, 92, 84, 0.33)";
-          color = "rgba(235, 219, 178, 0.9)";
           font_color = "rgba(235, 219, 178, 0.9)";
-          font_size = 14;
           font_family = "Maple Mono Bold";
           fade_on_empty = false;
           placeholder_text = ''<i><span foreground="##fbf1c7">Enter Password</span></i>'';

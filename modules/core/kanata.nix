@@ -23,7 +23,7 @@
 
           (deflayer default
             ;; On tap, send escape. On hold, act as left shift.
-            (tap-hold 50 50 esc lsft)
+            (tap-hold 65 65 esc lsft)
           )
         '';
       };
