@@ -4,7 +4,6 @@
 
   services.vicinae = {
     enable = true;
-    autoStart = true;
   };
 
   xdg.configFile."vicinae/vicinae.json".source = ./vicinae.json;

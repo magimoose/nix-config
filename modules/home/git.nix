@@ -3,10 +3,11 @@
   programs.git = {
     enable = true;
 
-    userName = "magimoose";
-    userEmail = "mgreig814@gmail.com";
-
-    extraConfig = {
+    settings = {
+      user = {
+        name = "magimoose";
+        email = "mgreig814@gmail.com";
+      };
       init.defaultBranch = "main";
       merge.conflictstyle = "diff3";
       diff.colorMoved = "default";
@@ -21,14 +22,16 @@
       core.excludesFile = "/home/${username}/.config/git/.gitignore";
     };
 
-    delta = {
-      enable = true;
-      options = {
-        line-numbers = true;
-        side-by-side = false;
-        diff-so-fancy = true;
-        navigate = true;
-      };
+  };
+
+  programs.delta = {
+    enable = true;
+    enableGitIntegration = true;
+    options = {
+      line-numbers = true;
+      side-by-side = false;
+      diff-so-fancy = true;
+      navigate = true;
     };
   };
 

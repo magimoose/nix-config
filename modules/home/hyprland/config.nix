@@ -388,7 +388,7 @@ in
       ];
 
       monitor = [
-        "eDP-1,1920x1080@60.0,auto,1"
+        "eDP-1,preferred,auto,1"
         ",preferred,auto-center-up,1"
       ];
 
