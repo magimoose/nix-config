@@ -1,7 +1,7 @@
 { pkgs, config, ... }:
 {
   imports = [
-    ./hardware-configuration.nix
+    ./hardware-configuration.nix  # Hardware config excluded from git
     ./../../modules/core
   ];
 
