@@ -72,6 +72,14 @@
             inherit self inputs username;
           };
         };
+        worklaptop = nixpkgs.lib.nixosSystem {
+          inherit system;
+          modules = [ ./hosts/worklaptop ];
+          specialArgs = {
+            host = "worklaptop";
+            inherit self inputs username;
+          };
+        };
       };
     };
 }
