@@ -30,7 +30,7 @@
     nix-gaming.url = "github:fufexan/nix-gaming";
     nix-flatpak.url = "github:gmodena/nix-flatpak";
 
-    superfile.url = "github:yorukot/superfile";
+    #superfile.url = "github:yorukot/superfile";
     vicinae.url = "github:vicinaehq/vicinae";
     #zen-browser.url = "github:0xc000022070/zen-browser-flake";
   };

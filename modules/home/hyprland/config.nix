@@ -6,6 +6,8 @@ in
 {
   wayland.windowManager.hyprland = {
     settings = {
+      "$mainMod" = "SUPER";
+
       # autostart
       exec-once = [
         # "hash dbus-update-activation-environment 2>/dev/null"
@@ -44,7 +46,6 @@ in
       };
 
       general = {
-        "$mainMod" = "SUPER";
         layout = "dwindle";
         gaps_in = 6;
         gaps_out = 12;
@@ -52,7 +53,6 @@ in
         "col.active_border" = "rgb(98971A) rgb(CC241D) 45deg";
         "col.inactive_border" = "0x00000000";
         # border_part_of_window = false;
-        no_border_on_floating = false;
       };
 
       misc = {
@@ -63,7 +63,6 @@ in
         animate_manual_resizes = false;
         enable_swallow = true;
         focus_on_activate = true;
-        new_window_takes_over_fullscreen = 2;
         middle_click_paste = false;
       };
 
@@ -292,92 +291,15 @@ in
         "$mainMod, mouse:273, resizewindow"
       ];
 
-      # windowrule
-      windowrule = [
-        "float,class:^(Viewnior)$"
-        "float,class:^(imv)$"
-        "float,class:^(mpv)$"
-        "tile,class:^(Aseprite)$"
-        "pin,class:^(rofi)$"
-        "pin,class:^(waypaper)$"
-        # "idleinhibit focus,mpv"
-        # "float,udiskie"
-        "float,title:^(Transmission)$"
-        "float,title:^(Volume Control)$"
-        "float,title:^(Firefox — Sharing Indicator)$"
-        "move 0 0,title:^(Firefox — Sharing Indicator)$"
-        "size 700 450,title:^(Volume Control)$"
-        "move 40 55%,title:^(Volume Control)$"
-
-        "float, title:^(Picture-in-Picture)$"
-        "opacity 1.0 override 1.0 override, title:^(Picture-in-Picture)$"
-        "pin, title:^(Picture-in-Picture)$"
-        "opacity 1.0 override 1.0 override, title:^(.*imv.*)$"
-        "opacity 1.0 override 1.0 override, title:^(.*mpv.*)$"
-        "opacity 1.0 override 1.0 override, class:(Aseprite)"
-        "opacity 1.0 override 1.0 override, class:(Unity)"
-        "opacity 1.0 override 1.0 override, class:(zen)"
-        "opacity 1.0 override 1.0 override, class:(evince)"
-        "workspace 1, class:^(${browser})$"
-        "workspace 3, class:^(evince)$"
-        "workspace 4, class:^(Gimp-2.10)$"
-        "workspace 4, class:^(Aseprite)$"
-        "workspace 5, class:^(Audacious)$"
-        "workspace 5, class:^(Spotify)$"
-        "workspace 8, class:^(com.obsproject.Studio)$"
-        "workspace 10, class:^(discord)$"
-        "workspace 10, class:^(WebCord)$"
-        "idleinhibit focus, class:^(mpv)$"
-        "idleinhibit fullscreen, class:^(firefox)$"
-        "float,class:^(org.gnome.Calculator)$"
-        "float,class:^(waypaper)$"
-        "float,class:^(zenity)$"
-        "size 850 500,class:^(zenity)$"
-        "size 725 330,class:^(SoundWireServer)$"
-        "float,class:^(org.gnome.FileRoller)$"
-        "float,class:^(org.pulseaudio.pavucontrol)$"
-        "float,class:^(SoundWireServer)$"
-        "float,class:^(.sameboy-wrapped)$"
-        "float,class:^(file_progress)$"
-        "float,class:^(confirm)$"
-        "float,class:^(dialog)$"
-        "float,class:^(download)$"
-        "float,class:^(notification)$"
-        "float,class:^(error)$"
-        "float,class:^(confirmreset)$"
-        "float,title:^(Open File)$"
-        "float,title:^(File Upload)$"
-        "float,title:^(branchdialog)$"
-        "float,title:^(Confirm to replace files)$"
-        "float,title:^(File Operation Progress)$"
-
-        "opacity 0.0 override,class:^(xwaylandvideobridge)$"
-        "noanim,class:^(xwaylandvideobridge)$"
-        "noinitialfocus,class:^(xwaylandvideobridge)$"
-        "maxsize 1 1,class:^(xwaylandvideobridge)$"
-        "noblur,class:^(xwaylandvideobridge)$"
-
-        # No gaps when only
-        "bordersize 0, floating:0, onworkspace:w[t1]"
-        "rounding 0, floating:0, onworkspace:w[t1]"
-        "bordersize 0, floating:0, onworkspace:w[tg1]"
-        "rounding 0, floating:0, onworkspace:w[tg1]"
-        "bordersize 0, floating:0, onworkspace:f[1]"
-        "rounding 0, floating:0, onworkspace:f[1]"
-
-        # "maxsize 1111 700, floating: 1"
-        # "center, floating: 1"
-
-        # Remove context menu transparency in chromium based apps
-        "opaque,class:^()$,title:^()$"
-        "noshadow,class:^()$,title:^()$"
-        "noblur,class:^()$,title:^()$"
-      ];
+      # windowrule - disabled due to deprecation in current Hyprland
+      # See: https://wiki.hyprland.org/Configuring/Window-Rules/
+      # windowrule = [
+      # ];
 
       layerrule = [
-        "dimaround, vicinae"
-        "dimaround, rofi"
-        "dimaround, swaync-control-center"
+        # "dimaround, vicinae"
+        # "dimaround, rofi"
+        # "dimaround, swaync-control-center"
       ];
 
       # No gaps when only

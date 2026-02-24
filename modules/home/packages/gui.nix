@@ -12,6 +12,7 @@
     vlc
     sioyek
     anki
+    zotero
 
     ## Office
     libreoffice
