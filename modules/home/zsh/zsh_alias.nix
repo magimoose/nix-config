@@ -39,6 +39,13 @@
       # python
       piv = "python -m venv .venv";
       psv = "source .venv/bin/activate";
+
+      # docker
+      dcu = "docker compose up";
+      dcd = "docker compose down";
+      dcl = "docker compose logs";
+      dp = "docker ps";
+
     };
   };
 }

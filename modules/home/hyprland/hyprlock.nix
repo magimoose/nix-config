@@ -17,6 +17,12 @@
         fractional_scaling = 0;
       };
 
+      auth = {
+        "fingerprint:enabled" = true;
+        "fingerprint:ready_message" = "Scan fingerprint to unlock";
+        "fingerprint:present_message" = "Scanning...";
+      };
+
       background = [
         {
           monitor = "";

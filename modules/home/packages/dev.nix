@@ -25,6 +25,6 @@
     ## Extra
     nodejs
     claude-code
-    # uv
+    uv
   ];
 }

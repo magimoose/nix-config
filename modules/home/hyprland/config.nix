@@ -148,9 +148,9 @@ in
         "$mainMod, F1, exec, show-keybinds"
 
         # keybindings
-        "$mainMod, Return, exec, ${terminal} --gtk-single-instance=true"
-        "ALT, Return, exec, [float; size 1111 700] ${terminal}"
-        "$mainMod SHIFT, Return, exec, [fullscreen] ${terminal}"
+        "$mainMod, T, exec, ${terminal} --gtk-single-instance=true"
+        "ALT, T, exec, [float; size 1111 700] ${terminal}"
+        "$mainMod SHIFT, T, exec, [fullscreen] ${terminal}"
         "$mainMod, B, exec, [workspace 1 silent] ${browser}"
         "$mainMod, Q, killactive,"
         "$mainMod, F, fullscreen, 0"
@@ -164,7 +164,6 @@ in
         "$mainMod SHIFT, Escape, exec, power-menu"
         "$mainMod, P, pseudo,"
         "$mainMod, X, togglesplit,"
-        "$mainMod, T, exec, toggle-oppacity"
         "$mainMod, E, exec, nemo"
         "ALT, E, exec, hyprctl dispatch exec '[float; size 1111 700] nemo'"
         "$mainMod SHIFT, B, exec, toggle-waybar"
