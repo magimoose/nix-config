@@ -6,27 +6,17 @@
 STATE_FILE="${XDG_RUNTIME_DIR:-/run/user/$(id -u)}/power-mode-state"
 
 set_battery() {
-    hyprctl --batch "\
-        keyword decoration:blur:enabled false;\
-        keyword decoration:shadow:enabled false;\
-        keyword animations:enabled false;\
-        keyword general:gaps_in 0;\
-        keyword general:gaps_out 0" > /dev/null
+    hyprctl keyword decoration:blur:enabled false > /dev/null
     echo "battery" > "$STATE_FILE"
     pkill -RTMIN+8 waybar || true
-    notify-send -u low "Power Mode" "Battery — effects disabled"
+    notify-send -u low "Power Mode" "Battery — blur disabled"
 }
 
 set_ac() {
-    hyprctl --batch "\
-        keyword decoration:blur:enabled true;\
-        keyword decoration:shadow:enabled true;\
-        keyword animations:enabled true;\
-        keyword general:gaps_in 6;\
-        keyword general:gaps_out 12" > /dev/null
+    hyprctl keyword decoration:blur:enabled true > /dev/null
     echo "ac" > "$STATE_FILE"
     pkill -RTMIN+8 waybar || true
-    notify-send -u low "Power Mode" "AC — effects restored"
+    notify-send -u low "Power Mode" "AC — blur restored"
 }
 
 get_current() {
