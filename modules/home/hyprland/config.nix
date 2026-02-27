@@ -23,6 +23,7 @@ in
         "vicinae server &"
         "hyprctl setcursor Bibata-Modern-Ice 24 &"
         "swww-daemon &"
+        "power-mode auto &"
 
         "hyprlock"
 
@@ -168,6 +169,7 @@ in
         "ALT, E, exec, hyprctl dispatch exec '[float; size 1111 700] nemo'"
         "$mainMod SHIFT, B, exec, toggle-waybar"
         "$mainMod, C ,exec, hyprpicker -a"
+        "$mainMod SHIFT, P, exec, power-mode toggle"
         "$mainMod, W,exec, wallpaper-picker"
         "$mainMod SHIFT, W,exec, hyprctl dispatch exec '[float; size 925 615] waypaper'"
         "$mainMod, N, exec, swaync-client -t -sw"

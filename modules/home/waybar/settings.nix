@@ -41,6 +41,7 @@ in
       "pulseaudio"
       "network"
       "battery"
+      "custom/power-mode"
       "hyprland/language"
       "custom/notification"
       "custom/power-menu"
@@ -140,6 +141,16 @@ in
       format-time = "{H}h{M}m";
       tooltip = true;
       tooltip-format = "{time}";
+    };
+    "custom/power-mode" = {
+      tooltip = true;
+      tooltip-format = "Power mode (click to toggle)";
+      format = "{}";
+      exec = "bash -c 'FILE=\"$XDG_RUNTIME_DIR/power-mode-state\"; if [ -f \"$FILE\" ] && [ \"$(cat \"$FILE\")\" = battery ]; then echo \"<span foreground=\\\"${green}\\\">󰌪</span>\"; else echo \"<span foreground=\\\"${yellow}\\\">󰐥</span>\"; fi'";
+      exec-on-event = false;
+      interval = 0;
+      signal = 8;
+      on-click = "power-mode toggle";
     };
     "hyprland/language" = {
       tooltip = true;
