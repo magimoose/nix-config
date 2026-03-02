@@ -1,11 +1,11 @@
 { ...}:
-#let
-#	nixvim = import (builtins.fetchGit { 
-#			url = "https://github.com/nix-community/nixvim";
-#			ref = "nixos-25.05";
-#			narHash = "sha256-O5cqRhOiKDCHBZze4VJBZqRjX4B+DttSkAJcTEhDv1k=";
-#		});
-#in
+let
+	nixvim = import (builtins.fetchGit { 
+			url = "https://github.com/nix-community/nixvim";
+			ref = "nixos-25.05";
+			narHash = "sha256-zEyZ8bMOzXkwpIizl8xtWoP2w2fiZ0bbrIt7DxjQgME=";
+		});
+in
 {
   imports = [ 
 		nixvim.homeManagerModules.nixvim
