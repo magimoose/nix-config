@@ -10,6 +10,8 @@ programs.nixvim.opts = {
       shiftwidth = 2;
       autoindent = true;
 			smartindent = true;
-			wrap = false;
+			wrap = true;
+		linebreak = true;
+		breakindent = true;
 	}; 
 }

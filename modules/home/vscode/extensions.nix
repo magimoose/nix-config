@@ -29,6 +29,7 @@ in
 
       ## Other
       github.copilot
+			vscodevim.vim
     ];
   };
 }
