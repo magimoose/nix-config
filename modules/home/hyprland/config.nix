@@ -2,6 +2,8 @@
 let
   browser = "firefox";
   terminal = "ghostty";
+  laptopMonitor = "eDP-1";
+  externalMonitor = "DP-2";
 in
 {
   wayland.windowManager.hyprland = {
@@ -308,6 +310,18 @@ in
         "w[t1], gapsout:0, gapsin:0"
         "w[tg1], gapsout:0, gapsin:0"
         "f[1], gapsout:0, gapsin:0"
+
+        # Bind workspace 1 to laptop, rest to external monitor
+        "1, monitor:${laptopMonitor}, default:true"
+        "2, monitor:${externalMonitor}, default:true"
+        "3, monitor:${externalMonitor}"
+        "4, monitor:${externalMonitor}"
+        "5, monitor:${externalMonitor}"
+        "6, monitor:${externalMonitor}"
+        "7, monitor:${externalMonitor}"
+        "8, monitor:${externalMonitor}"
+        "9, monitor:${externalMonitor}"
+        "10, monitor:${externalMonitor}"
       ];
 
       monitor = [
