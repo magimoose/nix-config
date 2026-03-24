@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
-# Listen to Hyprland focus events and track the working directory of editor
-# windows (VSCode, kitty+nvim, ghostty+nvim). The directory is persisted to
-# a file so other scripts (e.g. terminal-editor-dir) can read it.
+# Listen to Hyprland focus events and track the working directory of the
+# focused window. The directory is persisted to a file so other scripts
+# (e.g. terminal-editor-dir) can read it.
 
 EDITOR_DIR_FILE="${XDG_RUNTIME_DIR:-/tmp}/current_editor_dir"
 
@@ -9,6 +9,18 @@ if ! command -v socat >/dev/null 2>&1; then
   echo "socat is required but not installed; aborting" >&2
   exit 1
 fi
+
+# Walk /proc to find the deepest child of a given PID and return its cwd.
+deepest_child_cwd() {
+  local pid="$1" child
+  # Follow the chain of children to the leaf process (the actual shell/program)
+  while true; do
+    child=$(pgrep -P "$pid" --oldest 2>/dev/null | head -1)
+    [ -n "$child" ] || break
+    pid="$child"
+  done
+  readlink -f "/proc/$pid/cwd" 2>/dev/null
+}
 
 track_editor_dir() {
   local win_info class title pid dir=""
@@ -32,25 +44,17 @@ track_editor_dir() {
         fi
       done
       ;;
-    kitty|com.mitchellh.ghostty)
-      if [[ "$title" == nvim\ * ]]; then
-        local path="${title#nvim }"
-        # Expand leading ~
-        path="${path/#\~/$HOME}"
-        if [ -d "$path" ]; then
-          dir="$path"
-        elif [ -f "$path" ]; then
-          dir=$(dirname "$path")
-        fi
-      else
-        # For regular terminal windows, read CWD from /proc
-        dir=$(readlink -f "/proc/$pid/cwd" 2>/dev/null)
-      fi
+    *)
+      # For any window, find the deepest child process and read its cwd.
+      # This works for terminals (ghostty, kitty, etc.) where the shell
+      # is a child process with its own working directory.
+      dir=$(deepest_child_cwd "$pid")
       ;;
   esac
 
   if [ -n "$dir" ] && [ -d "$dir" ]; then
     printf '%s\n' "$dir" > "$EDITOR_DIR_FILE"
+    pkill -RTMIN+9 waybar 2>/dev/null
   fi
 }
 

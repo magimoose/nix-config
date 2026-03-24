@@ -153,8 +153,8 @@ in
         "$mainMod, F1, exec, show-keybinds"
 
         # keybindings
-        "$mainMod, T, exec, ${terminal} --gtk-single-instance=true"
-        "$mainMod, Return, exec, terminal-editor-dir"
+        "$mainMod, Return, exec, ${terminal} --gtk-single-instance=true"
+        "$mainMod, T, exec, terminal-editor-dir"
         "ALT, T, exec, [float; size 1111 700] ${terminal}"
         "$mainMod SHIFT, T, exec, [fullscreen] ${terminal}"
         "$mainMod, B, exec, [workspace 1 silent] ${browser}"

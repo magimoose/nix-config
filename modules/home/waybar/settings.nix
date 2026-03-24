@@ -31,6 +31,7 @@ in
     modules-left = [
       "custom/launcher"
       "hyprland/workspaces"
+      "custom/dir"
       "tray"
     ];
     modules-center = [ "clock" ];
@@ -193,6 +194,15 @@ in
       tooltip-format = "Power menu";
       format = "<span foreground='${red}'> </span>";
       on-click = "power-menu";
+    };
+    "custom/dir" = {
+      format = " {}";
+      tooltip = true;
+      tooltip-format = "Current project directory";
+      interval = 3600;
+      signal = 9;
+      exec = "bash -c 'FILE=\"$XDG_RUNTIME_DIR/current_editor_dir\"; if [ -f \"$FILE\" ]; then dir=$(cat \"$FILE\"); echo \"\${dir##*/}\"; else echo \"\"; fi'";
+      on-click = "terminal-editor-dir";
     };
   };
 }
