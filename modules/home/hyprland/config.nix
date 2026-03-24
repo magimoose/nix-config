@@ -29,6 +29,8 @@ in
 
         "hyprlock"
 
+        "track-editor-dir &"
+
         "${terminal} --gtk-single-instance=true --quit-after-last-window-closed=false --initial-window=false"
         "[workspace 1 silent] ${browser}"
         "[workspace 2 silent] ${terminal}"
@@ -152,6 +154,7 @@ in
 
         # keybindings
         "$mainMod, T, exec, ${terminal} --gtk-single-instance=true"
+        "$mainMod, Return, exec, terminal-editor-dir"
         "ALT, T, exec, [float; size 1111 700] ${terminal}"
         "$mainMod SHIFT, T, exec, [fullscreen] ${terminal}"
         "$mainMod, B, exec, [workspace 1 silent] ${browser}"

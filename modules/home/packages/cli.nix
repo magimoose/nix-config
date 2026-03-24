@@ -63,6 +63,7 @@
     mpv
 
     ## Utilities
+    socat # multipurpose relay (used by track-editor-dir)
     entr # perform action when file change
     ffmpeg
     file # Show file information
