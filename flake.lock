@@ -88,6 +88,24 @@
         "type": "github"
       }
     },
+    "flake-parts_3": {
+      "inputs": {
+        "nixpkgs-lib": "nixpkgs-lib_2"
+      },
+      "locked": {
+        "lastModified": 1769996383,
+        "narHash": "sha256-AnYjnFWgS49RlqX7LrC4uA+sCCDBj0Ry/WOJ5XWAsa0=",
+        "owner": "hercules-ci",
+        "repo": "flake-parts",
+        "rev": "57928607ea566b5db3ad13af0e57e921e6b12381",
+        "type": "github"
+      },
+      "original": {
+        "owner": "hercules-ci",
+        "repo": "flake-parts",
+        "type": "github"
+      }
+    },
     "gitignore": {
       "inputs": {
         "nixpkgs": [
@@ -742,6 +760,21 @@
         "type": "github"
       }
     },
+    "nixpkgs-lib_2": {
+      "locked": {
+        "lastModified": 1769909678,
+        "narHash": "sha256-cBEymOf4/o3FD5AZnzC3J9hLbiZ+QDT/KDuyHXVJOpM=",
+        "owner": "nix-community",
+        "repo": "nixpkgs.lib",
+        "rev": "72716169fe93074c333e8d0173151350670b824c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "nixpkgs.lib",
+        "type": "github"
+      }
+    },
     "nixpkgs_2": {
       "locked": {
         "lastModified": 1771369470,
@@ -843,7 +876,8 @@
         "nix-gaming": "nix-gaming",
         "nixpkgs": "nixpkgs_2",
         "nur": "nur",
-        "vicinae": "vicinae"
+        "vicinae": "vicinae",
+        "weathr": "weathr"
       }
     },
     "systems": {
@@ -922,6 +956,27 @@
       "original": {
         "owner": "vicinaehq",
         "repo": "vicinae",
+        "type": "github"
+      }
+    },
+    "weathr": {
+      "inputs": {
+        "flake-parts": "flake-parts_3",
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1774117264,
+        "narHash": "sha256-idlgrlsAdTYxsPvtuXROydQwvzdKGazZtr+jRW1GMBc=",
+        "owner": "Veirt",
+        "repo": "weathr",
+        "rev": "297d72dc1d24899133c3f06de02c9cfb2ff3db7f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Veirt",
+        "repo": "weathr",
         "type": "github"
       }
     },

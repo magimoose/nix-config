@@ -1,13 +1,9 @@
-{ ...}:
-let
-	nixvim = import (builtins.fetchGit { 
-			url = "https://github.com/Veirt/weathr.git";
-			ref = "nixos-25.05";
-		});
-in
+{ inputs, ... }:
 {
+  imports = [ inputs.weathr.homeModules.weathr ];
+
   programs.weathr = {
     enable = true;
-	};
+  };
 }
 

@@ -26,6 +26,10 @@
       url = "github:hyprwm/contrib";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+		weathr = {
+			url = "github:Veirt/weathr";
+			inputs.nixpkgs.follows = "nixpkgs";
+		};
 
     nix-gaming.url = "github:fufexan/nix-gaming";
     nix-flatpak.url = "github:gmodena/nix-flatpak";

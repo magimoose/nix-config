@@ -1,6 +1,7 @@
 { ... }:
 {
   imports = [
+		./azure-and-vpn.nix
     ./aseprite/aseprite.nix # pixel art editor
     ./audacious/audacious.nix # music player
     ./bat.nix # better cat command
