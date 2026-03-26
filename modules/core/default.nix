@@ -1,6 +1,7 @@
 { ... }:
 {
   imports = [
+		./azure-and-vpn.nix
     ./bootloader.nix
     ./hardware.nix
     ./xserver.nix
