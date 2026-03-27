@@ -18,6 +18,7 @@ in
 		./auto-session.nix
 		./auto-pairs.nix
 		./auto-tag.nix
+		./gitsigns.nix
 	];
   programs.nixvim = {
     enable = true;
