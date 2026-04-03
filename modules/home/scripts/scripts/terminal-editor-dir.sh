@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
-# Open ghostty in the editor directory tracked by track-editor-dir,
+# Open kitty in the editor directory tracked by track-editor-dir,
 # falling back to the default launch if no directory is recorded.
 EDITOR_DIR_FILE="${XDG_RUNTIME_DIR:-/tmp}/current_editor_dir"
 dir=$(cat "$EDITOR_DIR_FILE" 2>/dev/null)
 if [ -d "$dir" ]; then
-    exec ghostty --working-directory="$dir"
+    exec kitty --directory "$dir"
 else
-    exec ghostty
+    exec kitty
 fi

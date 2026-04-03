@@ -18,6 +18,8 @@
     '';
 
     settings = {
+      allow_remote_control = "socket-only";
+      listen_on = "unix:/tmp/kitty-{kitty_pid}";
       confirm_os_window_close = 0;
       background_opacity = "0.66";
       scrollback_lines = 10000;

@@ -44,10 +44,19 @@ track_editor_dir() {
         fi
       done
       ;;
+    kitty)
+      # Use kitty's remote control to get the focused window's foreground
+      # process cwd. This correctly handles multiple tabs/windows.
+      local socket="/tmp/kitty-${pid}"
+      if [ -S "$socket" ]; then
+        dir=$(kitty @ --to "unix:$socket" ls 2>/dev/null | jq -r '
+          .[].tabs[] | select(.is_focused) | .windows[] | select(.is_focused) |
+          .foreground_processes[0].cwd
+        ')
+      fi
+      ;;
     *)
       # For any window, find the deepest child process and read its cwd.
-      # This works for terminals (ghostty, kitty, etc.) where the shell
-      # is a child process with its own working directory.
       dir=$(deepest_child_cwd "$pid")
       ;;
   esac

@@ -1,7 +1,7 @@
 { ... }:
 let
   browser = "firefox";
-  terminal = "ghostty";
+  terminal = "kitty";
   laptopMonitor = "eDP-1";
   externalMonitor = "DP-2";
 in
@@ -30,14 +30,14 @@ in
         "hyprlock"
 
         "track-editor-dir &"
+        "handle-monitor-connect &"
 
-        "${terminal} --gtk-single-instance=true --quit-after-last-window-closed=false --initial-window=false"
         "[workspace 1 silent] ${browser}"
         "[workspace 2 silent] ${terminal}"
       ];
 
       input = {
-        kb_layout = "us(dvp),fi,us(colemak_dh)";
+        kb_layout = "us(dvp),fi";
         kb_options = "grp:ctrl_space_toggle";
         numlock_by_default = true;
         repeat_delay = 300;
@@ -153,13 +153,13 @@ in
         "$mainMod, F1, exec, show-keybinds"
 
         # keybindings
-        "$mainMod, Return, exec, ${terminal} --gtk-single-instance=true"
+        "$mainMod, Return, exec, ${terminal}"
         "$mainMod, T, exec, terminal-editor-dir"
         "ALT, T, exec, [float; size 1111 700] ${terminal}"
         "$mainMod SHIFT, T, exec, [fullscreen] ${terminal}"
         "$mainMod, B, exec, [workspace 1 silent] ${browser}"
         "$mainMod, Q, killactive,"
-        "$mainMod, F, fullscreen, 0"
+        "$mainMod, F, fullscreen, 1"
         "$mainMod SHIFT, F, fullscreen, 1"
         "$mainMod, Space, exec, toggle-float"
         "$mainMod, D, exec, vicinae vicinae://toggle"

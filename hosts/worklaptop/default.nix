@@ -9,6 +9,8 @@
     acpi
     brightnessctl
     cpupower-gui
+		kubectl
+		kubelogin
     powertop
   ];
 

@@ -10,8 +10,8 @@
     nixfmt
 
     ## C / C++
-    # gcc
-    # gdb
+    gcc
+    gdb
     # gef
     # cmake
     # gnumake
@@ -23,8 +23,11 @@
     # python312Packages.ipython
 
     ## Extra
+		k9s
+		dbeaver-bin
     nodejs
     claude-code
     uv
+		qbittorrent
   ];
 }

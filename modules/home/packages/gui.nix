@@ -9,10 +9,12 @@
     pavucontrol
     soundwireserver
     video-trimmer
+		glow
     vlc
     sioyek
     anki
     zotero
+		ghidra
 
     ## Office
     libreoffice
