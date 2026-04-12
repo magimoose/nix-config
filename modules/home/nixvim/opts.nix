@@ -1,6 +1,7 @@
 { nixvim, ...}:
 {
 programs.nixvim.opts = {
+      termguicolors = true;
       updatetime = 100;
       relativenumber = true;
       number = true;

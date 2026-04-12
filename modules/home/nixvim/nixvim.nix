@@ -29,5 +29,19 @@ in
 		globals.mapleader = " ";
 		plugins.web-devicons.enable = true;
 
+		colorschemes.gruvbox = {
+			enable = true;
+			settings = {
+				contrast = "hard";
+				transparent_mode = false;
+				bold = true;
+				italic = {
+					strings = true;
+					emphasis = true;
+					comments = true;
+					operators = false;
+				};
+			};
+		};
 	};
 }
