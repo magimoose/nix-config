@@ -2,7 +2,7 @@
 {
   programs.ghostty = {
     enable = true;
-    enableZshIntegration = true;
+    enableFishIntegration = true;
 
     settings = {
       ##### Font #####

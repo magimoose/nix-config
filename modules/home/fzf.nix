@@ -3,7 +3,7 @@
   programs.fzf = {
     enable = true;
 
-    enableZshIntegration = true;
+    enableFishIntegration = true;
 
     defaultCommand = "fd --hidden --no-ignore --strip-cwd-prefix --exclude .git";
     fileWidgetOptions = [
