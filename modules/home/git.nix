@@ -6,7 +6,7 @@
     settings = {
       user = {
         name = "magimoose";
-        email = "mgreig814@gmail.com";
+        email = "magnus@boulevardtech.fi";
       };
       init.defaultBranch = "main";
       merge.conflictstyle = "diff3";

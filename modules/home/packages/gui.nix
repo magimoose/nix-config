@@ -15,6 +15,9 @@
     anki
     zotero
 		ghidra
+		radare2
+		pkg-config
+		vim
 
     ## Office
     libreoffice
@@ -25,6 +28,8 @@
     gnome-disk-utility
     strawberry
     spotify
+		vimgolf
+		graphviz
 
     ## Communication
     telegram-desktop
@@ -32,6 +37,7 @@
     zenity
     signal-desktop
     slack
+		zathura
 
 
     ## Level editor

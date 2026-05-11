@@ -9,5 +9,6 @@
 
     kernelPackages = pkgs.linuxPackages_zen;
     supportedFilesystems = [ "ntfs" ];
+
   };
 }

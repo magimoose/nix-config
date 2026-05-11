@@ -6,13 +6,10 @@ in
   hardware = {
     graphics = {
       enable = true;
+      enable32Bit = true; # Required for Steam
       package = hyprland-pkgs.mesa;
-      extraPackages = with pkgs; [
-        intel-media-driver
-        (intel-vaapi-driver.override { enableHybridCodec = true; })
-        libva-vdpau-driver
-        libvdpau-va-gl
-      ];
+      # Mesa includes RADV (AMD Vulkan driver) by default
+      # No extra packages needed for basic AMD support
     };
   };
   hardware.enableRedistributableFirmware = true;

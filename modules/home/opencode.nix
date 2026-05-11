@@ -1,10 +1,13 @@
 { pkgs, ... }:
 {
-  home.packages = with pkgs; [ viewnior ];
+  home.packages = with pkgs; [ opencode ];
 
 	xdg.configFile."opencode/opencode.json".text = ''
 		{
-			"edit": "ask",
+			"permission": {
+				"edit": "ask",
+			},
+			"lsp": false
 		}
 	'';
 }

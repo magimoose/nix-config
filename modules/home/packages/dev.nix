@@ -12,6 +12,7 @@
     ## C / C++
     gcc
     gdb
+		gtk3
     # gef
     # cmake
     # gnumake
@@ -22,9 +23,16 @@
     # python3
     # python312Packages.ipython
 
+		# reverse
+		strace
+		ltrace
+
     ## Extra
 		k9s
+		postgresql
 		dbeaver-bin
+		zlib
+		gnumake
     nodejs
     claude-code
     uv

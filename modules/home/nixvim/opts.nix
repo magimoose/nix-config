@@ -14,5 +14,6 @@ programs.nixvim.opts = {
 			wrap = true;
 		linebreak = true;
 		breakindent = true;
+		clipboard = "unnamedplus";
 	}; 
 }
