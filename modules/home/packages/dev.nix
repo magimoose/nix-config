@@ -20,8 +20,8 @@
     # llvmPackages_20.clang-tools
 
     ## Python
-    # python3
-    # python312Packages.ipython
+    python3
+    python312Packages.ipython
 
 		# reverse
 		strace

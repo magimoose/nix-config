@@ -3,7 +3,7 @@ let
   browser = "firefox";
   terminal = "kitty";
   laptopMonitor = "eDP-1";
-  externalMonitor = "DP-2";
+  externalMonitor = "DP-1";
 in
 {
   wayland.windowManager.hyprland = {
