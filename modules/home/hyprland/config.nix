@@ -314,17 +314,26 @@ in
         "w[tg1], gapsout:0, gapsin:0"
         "f[1], gapsout:0, gapsin:0"
 
-        # Bind workspace 1 to laptop, rest to external monitor
+        # Bind workspace 1 to laptop, rest to external monitor (both DP-1 and DP-2)
         "1, monitor:${laptopMonitor}, default:true"
-        "2, monitor:${externalMonitor}, default:true"
-        "3, monitor:${externalMonitor}"
-        "4, monitor:${externalMonitor}"
-        "5, monitor:${externalMonitor}"
-        "6, monitor:${externalMonitor}"
-        "7, monitor:${externalMonitor}"
-        "8, monitor:${externalMonitor}"
-        "9, monitor:${externalMonitor}"
-        "10, monitor:${externalMonitor}"
+        "2, monitor:DP-1, default:true"
+        "2, monitor:DP-2, default:true"
+        "3, monitor:DP-1"
+        "3, monitor:DP-2"
+        "4, monitor:DP-1"
+        "4, monitor:DP-2"
+        "5, monitor:DP-1"
+        "5, monitor:DP-2"
+        "6, monitor:DP-1"
+        "6, monitor:DP-2"
+        "7, monitor:DP-1"
+        "7, monitor:DP-2"
+        "8, monitor:DP-1"
+        "8, monitor:DP-2"
+        "9, monitor:DP-1"
+        "9, monitor:DP-2"
+        "10, monitor:DP-1"
+        "10, monitor:DP-2"
       ];
 
       monitor = [
