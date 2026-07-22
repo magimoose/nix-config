@@ -3,7 +3,7 @@ let
   browser = "firefox";
   terminal = "kitty";
   laptopMonitor = "eDP-1";
-  externalMonitor = "DP-1";
+  externalMonitor = "DP-2";
 in
 {
   wayland.windowManager.hyprland = {
@@ -20,7 +20,7 @@ in
         "poweralertd &"
         "wl-clip-persist --clipboard both &"
         "wl-paste --watch cliphist store &"
-        "waybar &"
+        # "waybar &" # toggled via $mainMod SHIFT, B
         "swaync &"
         "vicinae server &"
         "hyprctl setcursor Bibata-Modern-Ice 24 &"
@@ -76,7 +76,6 @@ in
         special_scale_factor = 1.0;
         split_width_multiplier = 1.0;
         use_active_for_splits = true;
-        pseudotile = "yes";
         preserve_split = "yes";
       };
 
@@ -106,7 +105,6 @@ in
         shadow = {
           enabled = true;
 
-          ignore_window = true;
           offset = "0 2";
           range = 20;
           render_power = 3;
@@ -145,7 +143,7 @@ in
       };
 
       binds = {
-        movefocus_cycles_fullscreen = true;
+        movefocus_cycles_fullscreen = false;
       };
 
       bind = [
@@ -169,7 +167,7 @@ in
         "ALT, Escape, exec, hyprlock"
         "$mainMod SHIFT, Escape, exec, power-menu"
         "$mainMod, P, pseudo,"
-        "$mainMod, X, togglesplit,"
+        "$mainMod, X, layoutmsg, togglesplit"
         "$mainMod, E, exec, nemo"
         "ALT, E, exec, hyprctl dispatch exec '[float; size 1111 700] nemo'"
         "$mainMod SHIFT, B, exec, toggle-waybar"
@@ -314,26 +312,17 @@ in
         "w[tg1], gapsout:0, gapsin:0"
         "f[1], gapsout:0, gapsin:0"
 
-        # Bind workspace 1 to laptop, rest to external monitor (both DP-1 and DP-2)
+        # Bind workspace 1 to laptop, rest to external monitor
         "1, monitor:${laptopMonitor}, default:true"
-        "2, monitor:DP-1, default:true"
-        "2, monitor:DP-2, default:true"
-        "3, monitor:DP-1"
-        "3, monitor:DP-2"
-        "4, monitor:DP-1"
-        "4, monitor:DP-2"
-        "5, monitor:DP-1"
-        "5, monitor:DP-2"
-        "6, monitor:DP-1"
-        "6, monitor:DP-2"
-        "7, monitor:DP-1"
-        "7, monitor:DP-2"
-        "8, monitor:DP-1"
-        "8, monitor:DP-2"
-        "9, monitor:DP-1"
-        "9, monitor:DP-2"
-        "10, monitor:DP-1"
-        "10, monitor:DP-2"
+        "2, monitor:${externalMonitor}, default:true"
+        "3, monitor:${externalMonitor}"
+        "4, monitor:${externalMonitor}"
+        "5, monitor:${externalMonitor}"
+        "6, monitor:${externalMonitor}"
+        "7, monitor:${externalMonitor}"
+        "8, monitor:${externalMonitor}"
+        "9, monitor:${externalMonitor}"
+        "10, monitor:${externalMonitor}"
       ];
 
       monitor = [

@@ -37,5 +37,8 @@
     claude-code
     uv
 		qbittorrent
+		zip
+		postman
+		flyctl
   ];
 }

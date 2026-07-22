@@ -13,6 +13,7 @@
     ./services.nix
     ./system.nix
     ./flatpak.nix
+    ./freshrss.nix
     ./user.nix
     ./wayland.nix
     ./virtualization.nix

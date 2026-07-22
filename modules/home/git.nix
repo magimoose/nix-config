@@ -5,7 +5,7 @@
 
     settings = {
       user = {
-        name = "magimoose";
+        name = "Magnus John Greig";
         email = "magnus@boulevardtech.fi";
       };
       init.defaultBranch = "main";

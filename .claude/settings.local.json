@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(hyprctl version *)",
+      "Bash(hyprctl reload *)",
+      "Bash(journalctl --user -u hyprland -n 30 --no-pager)",
+      "Bash(hyprctl *)"
+    ]
+  }
+}

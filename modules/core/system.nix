@@ -4,6 +4,8 @@
   nix = {
     settings = {
       auto-optimise-store = true;
+      max-jobs = 4;
+      cores = 2;
       experimental-features = [
         "nix-command"
         "flakes"
@@ -23,6 +25,8 @@
   nixpkgs = {
     overlays = [ inputs.nur.overlays.default ];
   };
+
+  hardware.graphics.enable32Bit = true;
 
   environment.systemPackages = with pkgs; [
     wget

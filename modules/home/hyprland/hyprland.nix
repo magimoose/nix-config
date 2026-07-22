@@ -1,7 +1,19 @@
 { inputs, pkgs, ... }:
+let
+  # nixpkgs renamed the `swww` package to `awww`; its binaries are now
+  # `awww` / `awww-daemon`. waypaper's swww backend and the wallpaper
+  # scripts still invoke `swww` / `swww-daemon`, so expose awww under the
+  # old command names for compatibility.
+  swww-compat = pkgs.runCommand "swww-compat" { } ''
+    mkdir -p $out/bin
+    ln -s ${pkgs.awww}/bin/awww $out/bin/swww
+    ln -s ${pkgs.awww}/bin/awww-daemon $out/bin/swww-daemon
+  '';
+in
 {
   home.packages = with pkgs; [
-    swww
+    awww
+    swww-compat
     inputs.hypr-contrib.packages.${pkgs.system}.grimblast
     inputs.hyprpicker.packages.${pkgs.system}.hyprpicker
     grim

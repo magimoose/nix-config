@@ -19,6 +19,7 @@ in
 		./auto-pairs.nix
 		./auto-tag.nix
 		./gitsigns.nix
+		./surround.nix
 	];
   programs.nixvim = {
     enable = true;

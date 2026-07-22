@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 {
   home.packages = with pkgs; [
     ## Multimedia
@@ -16,6 +16,8 @@
     zotero
 		ghidra
 		radare2
+		(lib.lowPrio (rizin.withPlugins (ps: with ps; [ rz-ghidra ])))
+		(cutter.withPlugins (ps: with ps; [ rz-ghidra ]))
 		pkg-config
 		vim
 
@@ -27,7 +29,7 @@
     dconf-editor
     gnome-disk-utility
     strawberry
-    spotify
+
 		vimgolf
 		graphviz
 
